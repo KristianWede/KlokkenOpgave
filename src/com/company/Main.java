@@ -7,11 +7,12 @@ public class Main {
     String[] alleMåneder = {"Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"};
     String[] alleDage = {"Mandag","Tirsdag","Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"};
 
-    public int dagsDato(int weekDay, int date, int month, int year){
+    public void dagsDato(int weekDay, int day, int month, int year){
 
-        System.out.println(alleDage[weekDay-1]);
+        String ugeDag = alleDage[weekDay-1];
+        String månedsNavn = alleMåneder[month-1];
 
-        return 0;
+        System.out.printf("\t " + "I dag er det %s d. %d %s %d.", ugeDag, day, månedsNavn, year);
     }
 
     public static void main(String[] args) {
