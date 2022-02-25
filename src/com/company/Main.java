@@ -13,6 +13,9 @@ public class Main {
 
         String tekstToday = today.toString();
 
+        System.out.println(tekstToday.indexOf("-"));
+
+
         int år = Integer.parseInt(tekstToday.substring(0,4));
         int måned = Integer.parseInt(tekstToday.substring(5,7));
         int dage = Integer.parseInt(tekstToday.substring(8,10));
