@@ -4,65 +4,44 @@ import java.time.LocalDate;
 
 public class Main {
 
+    String[] alleMåneder = {"Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"};
+    String[] alleDage = {"Mandag","Tirsdag","Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"};
+
     public int dagsDato(int weekDay, int date, int month, int year){
+
+        System.out.println(alleDage[weekDay-1]);
+
         return 0;
-    }
-
-    public int getDayOfWeek(LocalDate today){
-
-        String tekstForDate = today.toString();
-
-        int part1OfDay = tekstForDate.lastIndexOf("-");
-
-        int part2OfDay = tekstForDate.length();
-
-        String tekstForToday = tekstForDate.substring(part1OfDay+1,part2OfDay);
-
-        int value = Integer.parseInt(tekstForToday);
-
-        return value;
-    }
-
-    public void getMonth (){
-
-    }
-
-    public void getDayOfMonth(){
-
-    }
-
-    public void getYear(){
-
-    }
-
-    public int getValue(int value){
-
-        return value;
     }
 
     public static void main(String[] args) {
 
         Main obj = new Main();
 
-
-        String[] alleMåneder = {"Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"};
-        String[] alleDage = {"Mandag","Tirsdag","Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"};
-
         LocalDate today = LocalDate.now();
 
-        String tekstToday = today.toString();
+        int numberForDayName = today.getDayOfWeek().getValue();
 
-        System.out.println(today);
+        System.out.println(numberForDayName);
 
-        System.out.println();obj.getDayOfWeek(today);
+        int numberForDay = today.getDayOfMonth();
 
-        System.out.println(tekstToday.indexOf("-"));
-        System.out.println(tekstToday.lastIndexOf("-"));
+        System.out.println(numberForDay);
 
-        int år = Integer.parseInt(tekstToday.substring(0,4));
-        int måned = Integer.parseInt(tekstToday.substring(5,7));
+        int numberForMonth = today.getMonthValue();
+
+        System.out.println(numberForMonth);
+
+        int numberForYear = today.getYear();
+
+        System.out.println(numberForYear);
+
+        obj.dagsDato(numberForDayName, numberForDay, numberForMonth, numberForYear);
 
 
+
+
+/*
         if( dage >= 7 ) {
             int konvertér = dage % 7;
             System.out.println(år);
@@ -73,7 +52,7 @@ public class Main {
             System.out.println(alleMåneder[måned - 1]);
             System.out.println(alleDage[dage]);
         }
-
+*/
 
 
      //System.out.println("I dag er det måned: " + tekstVerMåned.substring());
